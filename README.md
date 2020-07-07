@@ -2,9 +2,9 @@
 
 # Description
 
-lightweight react inputs library.
+lightweight react card component.
 
-![alt text](https://raw.githubusercontent.com/scripty08/react-card/master/inputs.png "@scripty/react-buttons")
+![alt text](./card.png "@scripty/react-card")
 
 # Usage
 ```bash
@@ -15,34 +15,54 @@ npm install -s @scripty/react-card
 
 ```javascript
 import React, { Fragment } from 'react';
-import { Input, UsernameInput } from '@src';
-import { PasswordInput } from '@src/PasswordInput';
-import { EmailInput } from '@src/EmailInput';
-import { SearchInput } from '@src/SearchInput';
+import { Card } from '@src';
 
 export const Example = () => {
 
+    const onClick = (e) => {
+        console.log(e);
+    }
+
     return (
         <Fragment>
-            <h2>Input</h2>
-            <Input />
+            <h2>Card</h2>
+            <Card
+                title={'Simple Card'}
+                width={300}
+            >
+                Simple Card Content
+            </Card>
 
-            <h2>Search Input</h2>
-            <SearchInput />
+            <h2>Card with Actions</h2>
+            <Card
+                title={'Card with actions'}
+                width={300}
+                onEdit={onClick}
+                onClose={onClick}
+            >
+                Simple Card Content
+            </Card>
 
-            <h2>Username Input</h2>
-            <UsernameInput />
+            <h2>Card with custom actions</h2>
+            <Card
+                title={'Card with actions'}
+                width={300}
+                extra={'custom field'}
+            >
+                Simple Card Content
+            </Card>
 
-            <h2>Email Input</h2>
-            <EmailInput />
-
-            <h2>Password Input</h2>
-            <PasswordInput />
-
-            <h2>Input with help link</h2>
-            <UsernameInput
-                helpLink={<a tabindex={-1} href={'#'}>FORGOT?</a>}
-            />
+            <h2>Card with ok and cancel buttons</h2>
+            <Card
+                title={'Card with actions'}
+                width={300}
+                onEdit={onClick}
+                onClose={onClick}
+                onOk={onClick}
+                onCancel={onClick}
+            >
+                Simple Card Content
+            </Card>
         </Fragment>
     );
 };
