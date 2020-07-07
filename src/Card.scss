@@ -1,0 +1,60 @@
+.card {
+    border: 1px solid #e2e2e2;
+    border-radius: .25rem;
+    margin-bottom: 20px;
+    background-color: #fff;
+
+    .headline {
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid #e2e2e2;
+        height: 45px;
+        position: relative;
+
+        .title {
+            float: left;
+            padding: 15px 10px;
+        }
+
+        .extra {
+            float:right;
+            padding: 10px 10px;
+
+            .item {
+                border: 0;
+                padding: 3px;
+                cursor: pointer;
+            }
+
+            .icon {
+                color: #3E3E3E;
+                font-size: 20px;
+                margin-right: 5px;
+            }
+
+            .content {
+                font-size: 14px;
+                line-height: 26px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+
+    .toolbar {
+        display: inline-block;
+        position: relative;
+        bottom: 0;
+        border-top: 1px solid #e2e2e2;
+        width: 100%;
+
+        .toolbar-content {
+            padding: 8px
+        }
+    }
+
+    .content {
+        padding: 10px 10px 10px;
+    }
+}
