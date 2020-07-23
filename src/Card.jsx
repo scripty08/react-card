@@ -1,10 +1,5 @@
 import React from 'react';
-import AppstoreOutlined from '@ant-design/icons/lib/icons/AppstoreOutlined';
-import EditOutlined from '@ant-design/icons/lib/icons/EditOutlined';
-import SaveOutlined from '@ant-design/icons/lib/icons/SaveOutlined';
-import CloseOutlined from '@ant-design/icons/lib/icons/CloseOutlined';
-import DeleteOutlined from '@ant-design/icons/lib/icons/DeleteOutlined';
-import { CloseButton, OkButton } from '@scripty/react-buttons';
+import { CloseButton, DeleteButton, EditButton, MoveButton, OkButton, SaveButton } from '@scripty/react-buttons';
 import './Card.scss';
 
 export const Card = (props) => {
@@ -20,19 +15,41 @@ export const Card = (props) => {
         onOk,
         style,
         width = '100%',
-        extra
+        extra,
+        cardCls = 'card',
+        headlineCls = 'headline',
+        titleCls = 'title',
+        extraCls = 'extra',
+        ...restProps
     } = props;
 
+    const getButtons = () => {
+        const buttons = [];
+        if (typeof onEdit !== 'undefined') {
+            buttons.push(<EditButton rounded iconBtn color={'white'}/>);
+        }
+        if (typeof onSave !== 'undefined') {
+            buttons.push(<SaveButton rounded iconBtn color={'white'}/>);
+        }
+        if (typeof onMove !== 'undefined') {
+            buttons.push(<MoveButton rounded iconBtn color={'white'}/>);
+        }
+        if (typeof onClose !== 'undefined') {
+            buttons.push(<CloseButton rounded iconBtn color={'white'}/>);
+        }
+        if (typeof onDelete !== 'undefined') {
+            buttons.push(<DeleteButton rounded iconBtn color={'white'}/>);
+        }
+
+        return buttons;
+    }
+
     return (
-        <div className={'card'} style={{ width, ...style }}>
-            <div className={'headline'}>
-                <div className={'title'}>{title}</div>
-                <div className={'extra'}>
-                    {(onEdit) ? <span onClick={onEdit} className={'item'}><EditOutlined  /></span> : null}
-                    {(onSave) ? <span onClick={onSave} className={'item'}><SaveOutlined /></span> : null}
-                    {(onMove) ? <span onClick={onMove} className={'item'}><AppstoreOutlined onClick={onMove} /></span> : null}
-                    {(onClose) ? <span onClick={onClose} className={'item'}><CloseOutlined /></span> : null}
-                    {(onDelete) ? <span onClick={onDelete} className={'item'}><DeleteOutlined onClick={onDelete} /></span> : null}
+        <div {...restProps} className={cardCls} style={{ width, ...style }}>
+            <div className={headlineCls}>
+                <div className={titleCls}>{title}</div>
+                <div className={extraCls}>
+                    {getButtons()}
                     <span className={'content'}>{extra}</span>
                 </div>
             </div>
