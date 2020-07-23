@@ -9,40 +9,21 @@
         font-weight: 500;
         border-bottom: 1px solid #f0f0f0;
         position: relative;
-        display: flex;
+        display: inline-flex;
+        flex-direction: row;
         width: 100%;
 
         .title {
-            float: left;
             padding: 10px 10px;
+            width: 100%;
         }
 
         .extra {
-            right: 0;
-            position: absolute;
-            padding: 5px 10px;
+            padding: 10px 10px;
+            display: inline-flex;
 
             button {
                 margin: 0 3px;
-            }
-
-            .item {
-                border: 0;
-                padding: 5px;
-                cursor: pointer;
-            }
-
-            .icon {
-                color: #3E3E3E;
-                font-size: 20px;
-                margin-right: 5px;
-            }
-
-            .content {
-                font-size: 14px;
-                line-height: 30px;
-                margin: 0;
-                padding: 0;
             }
         }
     }

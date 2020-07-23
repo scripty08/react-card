@@ -45,12 +45,12 @@ export const Card = (props) => {
     }
 
     return (
-        <div {...restProps} className={cardCls} style={{ width, ...style }}>
+        <div {...restProps} className={cardCls} style={{ maxWidth: width, ...style }}>
             <div className={headlineCls}>
                 <div className={titleCls}>{title}</div>
                 <div className={extraCls}>
                     {getButtons()}
-                    <span className={'content'}>{extra}</span>
+                    <span>{extra}</span>
                 </div>
             </div>
             <div className={'content'}>{children}</div>

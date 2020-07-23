@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Description } from './Description';
 import { Card } from '../../src';
+import { EmailInput } from '@scripty/react-inputs'
 
 export const Example = () => {
 
@@ -10,11 +11,22 @@ export const Example = () => {
 
     return (
         <Fragment>
+
             <Description title={'Simple Card'}>
                 <Card
                     title={'Simple Card'}
                     width={300}
-                    key={1}
+                >
+                    Simple Card Content
+                </Card>
+            </Description>
+
+            <Description title={'Simple Card with input in title'}>
+                <Card
+                    title={<EmailInput placeholder={'Title'} />}
+                    width={600}
+                    onEdit={onClick}
+                    onClose={onClick}
                 >
                     Simple Card Content
                 </Card>
@@ -27,7 +39,6 @@ export const Example = () => {
                     width={300}
                     onEdit={onClick}
                     onClose={onClick}
-                    key={2}
                 >
                     Simple Card Content Some more text. Some more text.
                     Some more text. Some more text. Some more text. Some more text.
@@ -38,9 +49,8 @@ export const Example = () => {
             <Description title={'Card with custom actions'}>
                 <Card
                     title={'Card with actions 2'}
-                    width={300}
+                    width={400}
                     extra={'custom field'}
-                    key={3}
                 >
                     Simple Card Content
                 </Card>
@@ -54,7 +64,6 @@ export const Example = () => {
                     onClose={onClick}
                     onOk={onClick}
                     onCancel={onClick}
-                    key={4}
                 >
                     Simple Card Content
                 </Card>
