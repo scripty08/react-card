@@ -24,7 +24,7 @@ export const Example = () => {
             <Description title={'Simple Card with input in title'}>
                 <Card
                     title={<EmailInput placeholder={'Title'} />}
-                    width={600}
+                    width={'100%'}
                     onEdit={onClick}
                     onClose={onClick}
                 >

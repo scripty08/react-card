@@ -26,19 +26,19 @@ export const Card = (props) => {
     const getButtons = () => {
         const buttons = [];
         if (typeof onEdit !== 'undefined') {
-            buttons.push(<EditButton rounded iconBtn color={'white'}/>);
+            buttons.push(<EditButton rounded iconBtn color={'white'} onClick={onEdit}/>);
         }
         if (typeof onSave !== 'undefined') {
-            buttons.push(<SaveButton rounded iconBtn color={'white'}/>);
+            buttons.push(<SaveButton rounded iconBtn color={'white'} onClick={onSave}/>);
         }
         if (typeof onMove !== 'undefined') {
-            buttons.push(<MoveButton rounded iconBtn color={'white'}/>);
+            buttons.push(<MoveButton rounded iconBtn color={'white'} onClick={onMove}/>);
         }
         if (typeof onClose !== 'undefined') {
-            buttons.push(<CloseButton rounded iconBtn color={'white'}/>);
+            buttons.push(<CloseButton rounded iconBtn color={'white'} onClick={onClose}/>);
         }
         if (typeof onDelete !== 'undefined') {
-            buttons.push(<DeleteButton rounded iconBtn color={'white'}/>);
+            buttons.push(<DeleteButton rounded iconBtn color={'white'} onClick={onDelete}/>);
         }
 
         return buttons;
