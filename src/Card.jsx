@@ -20,25 +20,26 @@ export const Card = (props) => {
         headlineCls = 'headline',
         titleCls = 'title',
         extraCls = 'extra',
+        id = '',
         ...restProps
     } = props;
 
     const getButtons = () => {
         const buttons = [];
         if (typeof onEdit !== 'undefined') {
-            buttons.push(<EditButton rounded iconBtn color={'white'} onClick={onEdit}/>);
+            buttons.push(<EditButton key={'edit-' + id} rounded iconBtn color={'white'} onClick={onEdit}/>);
         }
         if (typeof onSave !== 'undefined') {
-            buttons.push(<SaveButton rounded iconBtn color={'white'} onClick={onSave}/>);
+            buttons.push(<SaveButton key={'save-' + id} rounded iconBtn color={'white'} onClick={onSave}/>);
         }
         if (typeof onMove !== 'undefined') {
-            buttons.push(<MoveButton rounded iconBtn color={'white'} onClick={onMove}/>);
+            buttons.push(<MoveButton key={'move-' + id} rounded iconBtn color={'white'} onClick={onMove}/>);
         }
         if (typeof onClose !== 'undefined') {
-            buttons.push(<CloseButton rounded iconBtn color={'white'} onClick={onClose}/>);
+            buttons.push(<CloseButton key={'close-' + id} rounded iconBtn color={'white'} onClick={onClose}/>);
         }
         if (typeof onDelete !== 'undefined') {
-            buttons.push(<DeleteButton rounded iconBtn color={'white'} onClick={onDelete}/>);
+            buttons.push(<DeleteButton key={'delete-' + id} rounded iconBtn color={'white'} onClick={onDelete}/>);
         }
 
         return buttons;
